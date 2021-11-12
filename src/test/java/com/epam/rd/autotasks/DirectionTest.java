@@ -22,7 +22,7 @@ class DirectionTest {
 
     @ParameterizedTest
     @MethodSource
-    void ofDegrees(Optional<Direction> expected, int degrees) {
+    void ofDegrees(Direction expected, int degrees) {
         assertEquals(expected, Direction.ofDegrees(degrees));
     }
 
@@ -46,22 +46,22 @@ class DirectionTest {
 
     public static Stream<Arguments> ofDegrees() {
         return Stream.of(
-                arguments(Optional.of(N), 0),
-                arguments(Optional.of(NE), 45),
-                arguments(Optional.of(E), 90),
-                arguments(Optional.of(SE), 135),
-                arguments(Optional.of(S), 180),
-                arguments(Optional.of(SW), 225),
-                arguments(Optional.of(W), 270),
-                arguments(Optional.of(NW), 315),
+                arguments(N, 0),
+                arguments(NE, 45),
+                arguments(E, 90),
+                arguments(SE, 135),
+                arguments(S, 180),
+                arguments(SW, 225),
+                arguments(W, 270),
+                arguments(NW, 315),
 
-                arguments(Optional.of(N), 360),
-                arguments(Optional.of(NE), 765),
-                arguments(Optional.of(NW), -45),
-                arguments(Optional.of(SW), -135),
+                arguments(N, 360),
+                arguments(NE, 765),
+                arguments(NW, -45),
+                arguments(SW, -135),
 
-                arguments(Optional.empty(), 44),
-                arguments(Optional.empty(), 1111)
+                arguments(null, 44),
+                arguments(null, 1111)
         );
     }
 

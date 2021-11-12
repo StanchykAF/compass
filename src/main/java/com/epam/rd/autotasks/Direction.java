@@ -11,7 +11,7 @@ public enum Direction {
 
     private int degrees;
 
-    public static Optional<Direction> ofDegrees(int degrees) {
+    public static Direction ofDegrees(int degrees) {
         throw new UnsupportedOperationException();
     }
 
